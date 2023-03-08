@@ -1,3 +1,3 @@
-function product = my_sum(a,b)
+function product = my_product(a,b)
 product = a*b;
 end
