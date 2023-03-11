@@ -29,7 +29,7 @@ while invalid_prompt
 
 end
 
-%identifies reference point on the matrix of complete data, based on 'marker.'
+%identifies reference point (column) on the matrix of complete data, based on 'marker.'
 if marker == 1
     ref_point_on_matrix = 1;
 else
