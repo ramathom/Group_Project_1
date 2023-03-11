@@ -1,0 +1,37 @@
+function marker_of_interest = extract_marker_of_interest(vicon_and_delsys_data)
+
+complete_vicon_data = excel_upload(vicon_and_delsys_data);
+
+%complete list of all markers.
+list_of_markers = ['LFHD','RFHD','LBDH','RBHD','C7','T10','CLAV','STRN','RBAK','LSHO','LUPA','LELB','LFRM','LWRA','LWRB','LFIN','RSHO','RUPA','RELB','RFRM','RWRA','RWRB','RFIN','LASI','RASI','LPSI','RPSI','LTHI','LKNE','LTIB','LANK','LHEE','LTOE','RTHI','RKNE','RTIB','RANK','RHEE','RTOE'];
+
+%asks user which marker to be analyzed.
+prompt = "Which marker do you want to analyze?";
+txt = input(prompt,"s");
+invalid_prompt = true;
+
+%scrolls through list of markers and checks if user input matches any of
+%the items. User input must exactly match
+while invalid_prompt
+    for count = 1:length(list_of_marker)
+        if txt == list_of_markers(count)
+            invalid_prompt = false;
+            marker = count;
+            break
+        end
+    end
+
+    prompt = "Invalid input. Which marker do you want to analyze?";
+    txt = input(prompt,"s");
+
+end
+
+if marker == 1
+    ref_point_on_matrix = 1;
+else
+    ref_point_on_matrix = 3*(marker-1) + 1;
+end
+
+marker_of_interest = complete_vicon_data(1:end,ref_point_on_matrix:(ref_point_on_matrix+2));
+
+end
