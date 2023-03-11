@@ -8,7 +8,7 @@ time_windows = [];
 %incomplete coordinates (contain NaN) are excluded.
 for frame = 1:num_of_frames(1)
     if ~isnan(marker_of_interest(frame,1)) && ~isnan(marker_of_interest(frame,2)) && ~isnan(marker_of_interest(frame,3))
-        time_windows = [times_windows frame];
+        time_windows = [time_windows frame];
     end
 end
 end
