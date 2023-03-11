@@ -11,3 +11,4 @@ for frame = 1:num_of_frames(1)
         time_windows = [times_windows frame];
     end
 end
+end
