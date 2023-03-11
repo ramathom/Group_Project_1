@@ -21,8 +21,6 @@ for index = 1:length(RANK_time_windows)-1
         if RANK(current_frame) > RANK(next_frame) %if the current frame is greater than the next frame, it's likely a maxima.
             right_foot_steps = right_foot_steps + 1;
         end
-    else
-        continue
     end
 end
 
