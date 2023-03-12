@@ -3,11 +3,11 @@ function marker_of_interest = extract_marker_of_interest(vicon_and_delsys_data)
 complete_vicon_data = excel_upload(vicon_and_delsys_data);
 
 %complete list of all markers.
-list_of_markers = ['LFHD','RFHD','LBDH','RBHD','C7','T10','CLAV','STRN','RBAK','LSHO','LUPA','LELB','LFRM','LWRA','LWRB','LFIN','RSHO','RUPA','RELB','RFRM','RWRA','RWRB','RFIN','LASI','RASI','LPSI','RPSI','LTHI','LKNE','LTIB','LANK','LHEE','LTOE','RTHI','RKNE','RTIB','RANK','RHEE','RTOE'];
+list_of_markers = ["LFHD","RFHD","LBDH","RBHD","C7","T10","CLAV","STRN","RBAK","LSHO","LUPA","LELB","LFRM","LWRA","LWRB","LFIN","RSHO","RUPA","RELB","RFRM","RWRA","RWRB","RFIN","LASI","RASI","LPSI","RPSI","LTHI","LKNE","LTIB","LANK","LHEE","LTOE","RTHI","RKNE","RTIB","RANK","RHEE","RTOE"];
 
 %asks user which marker to be analyzed.
-prompt = "Which marker do you want to analyze?";
-txt = input(prompt,"s");
+prompt = "Which marker do you want to analyze? ";
+txt = input(prompt,'s');
 invalid_prompt = true;
 
 %scrolls through list of markers and checks if user input matches any of
@@ -15,17 +15,15 @@ invalid_prompt = true;
 %(case-sensitive), or else the prompt is repeated. Once the marker is
 %identified, the index is stored in the variable 'marker.'
 while invalid_prompt
-    
-    for count = 1:length(list_of_marker)
-        if txt == list_of_markers(count)
-            invalid_prompt = false;
-            marker = count;
-            break
-        end
+
+    if ismember(txt,list_of_markers)
+        invalid_prompt = false;
+        marker = find(list_of_markers == txt);
+        break
     end
 
-    prompt = "Invalid input. Which marker do you want to analyze?";
-    txt = input(prompt,"s");
+    prompt = "Invalid input. Which marker do you want to analyze? ";
+    txt = input(prompt);
 
 end
 
