@@ -13,8 +13,8 @@ function Three_dimensional_plot = marker_graph(vicon_and_delsys_data)
   ylabel('Y Data (mm)')
   zlabel('Z Data (mm)')
   title('Vicon System: 3D Visualization of Marker') 
-  %would be nice to make this title specific to whichever marker is being called
-
+  %would be nice to make this title specific to whichever marker is being
+  %called... find txt of marker and create string in title? 
   
 end
 
