@@ -28,11 +28,7 @@ while invalid_prompt
 end
 
 %identifies reference point (column) on the matrix of complete data, based on 'marker.'
-if marker == 1
-    ref_point_on_matrix = 1;
-else
-    ref_point_on_matrix = 3*(marker-1) + 1;
-end
+ref_point_on_matrix = 3*(marker-1) + 1;
 
 %creates a matrix consisting only of coordinate data of the marker of
 %interest from the complete data.
