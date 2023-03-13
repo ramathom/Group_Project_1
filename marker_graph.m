@@ -1,6 +1,6 @@
 function Three_dimensional_plot = marker_graph(vicon_and_delsys_data) 
 %the input should be the specific marker outputted from the marker of interest function
-  marker_of_interest = extract_marker_of_interest(vicon_and_delsys_data); 
+  [marker_of_interest, name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data); 
   time_windows = extract_time_windows(marker_of_interest);
   %if columns are incomplete, call the time windows in marker of interest
  
@@ -12,9 +12,9 @@ function Three_dimensional_plot = marker_graph(vicon_and_delsys_data)
   xlabel('X Data (mm)')
   ylabel('Y Data (mm)')
   zlabel('Z Data (mm)')
-  title('Vicon System: 3D Visualization of Marker') 
-  %would be nice to make this title specific to whichever marker is being
-  %called... find txt of marker and create string in title? 
+  
+  title('Vicon System: 3D Visualization of', name_of_marker)  
+  % title specific to whichever marker is being
   
 end
 

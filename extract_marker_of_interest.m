@@ -1,4 +1,4 @@
-function marker_of_interest = extract_marker_of_interest(vicon_and_delsys_data)
+function [matrix_marker_of_interest,name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data)
 
 complete_vicon_data = excel_upload(vicon_and_delsys_data);
 
@@ -32,6 +32,9 @@ ref_point_on_matrix = 3*(marker-1) + 1;
 
 %creates a matrix consisting only of coordinate data of the marker of
 %interest from the complete data.
-marker_of_interest = complete_vicon_data(1:end,ref_point_on_matrix:(ref_point_on_matrix+2));
+matrix_marker_of_interest = complete_vicon_data(1:end,ref_point_on_matrix:(ref_point_on_matrix+2));
+
+%outputs name of marker, too.
+name_of_marker = list_of_markers(marker);
 
 end
