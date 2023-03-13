@@ -1,0 +1,9 @@
+function data_matrix = gaps_in_data(vicon_and_delsys_data)
+
+list_of_markers = ["LFHD","RFHD","LBDH","RBHD","C7","T10","CLAV","STRN","RBAK","LSHO","LUPA","LELB","LFRM","LWRA","LWRB","LFIN","RSHO","RUPA","RELB","RFRM","RWRA","RWRB","RFIN","LASI","RASI","LPSI","RPSI","LTHI","LKNE","LTIB","LANK","LHEE","LTOE","RTHI","RKNE","RTIB","RANK","RHEE","RTOE"];
+
+for count = 1:39
+    (time_window_of_marker,name_of_marker) = extract_time_windows(list_of_markers(count));
+    
+end
+end
