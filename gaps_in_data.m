@@ -1,22 +1,29 @@
-function data_matrix = gaps_in_data(vicon_and_delsys_data)
-
-list_of_markers = ["LFHD","RFHD","LBDH","RBHD","C7","T10","CLAV","STRN","RBAK","LSHO","LUPA","LELB","LFRM","LWRA","LWRB","LFIN","RSHO","RUPA","RELB","RFRM","RWRA","RWRB","RFIN","LASI","RASI","LPSI","RPSI","LTHI","LKNE","LTIB","LANK","LHEE","LTOE","RTHI","RKNE","RTIB","RANK","RHEE","RTOE"];
-data_matrix = [];
-gaps = '';
-num_of_gaps = 0;
-
-for count = 1:length(list_of_markers)
-    [time_marker] = extract_time_windows(list_of_markers(count));
-    if length(time_marker) >= 1
-        data_matrix(1,count) = name_of_marker;
-        for n = 1:length(time_marker)-1
-            if time_marker(n) + 1 ~= time_marker(n+1)
-                num_of_gaps = num_of_gaps + 1;
-            end
+function [verbal_display] = gaps_in_data(vicon_and_delsys_data)
+loc_gaps = extract_time_windows2(vicon_and_delsys_data);
+if (length(loc_gaps)==0) %if there were no gaps in data in the entire trial
+    verbal_display = 'Marker was within camera frame for the entirety of the trial.';
+else % if there is at least 1 gap in the trial 
+    num_gaps = length(loc_gaps);
+    gap_starts = [loc_gaps(1)];
+    time_gap_starts = [loc_gaps(1)*0.01];
+    gap_durations = [];
+    starting_point = loc_gaps(1);oes 
+    for x = 2:num_gaps
+        if (loc_gaps(x) ~= loc_gaps(x-1)+1)
+            difference = (loc_gaps(x-1) - starting_point+1)*0.01;
+            gap_durations = [gap_durations,difference];
+            gap_starts = [gap_starts,loc_gaps(x)]; %this is just the frame # at which gap occurs
+            time_gap_starts = [time_gap_starts,loc_gaps(x)*0.01]; %this is the frame # translated to time point 
+            starting_point = loc_gaps(x);
         end
-        data_matrix(2,count) = num_of_gaps;
     end
+    gap_durations = [gap_durations,((loc_gaps(end)-starting_point+1)*0.01)];
+    %verbal_display = strcat('Marker data is missing starting at',num2str(time_gap_starts, ', '),' seconds');
+    strs_starts = string(time_gap_starts);
+    strs_durations = string(gap_durations);
+    verbal_display = strcat('Marker is out of camera view for',{' '},num2str(num_gaps),' frames total. The starting time points of each gap are',{' '},strjoin(strs_starts, ' , '),' seconds. The duration of each of these gaps in marker retrieval is',{' '},strjoin(strs_durations, ', '),' seconds, respectively. Cross-reference video to make adjustments to camera placement for future trials.');
+end
 end
 
-end
+
 

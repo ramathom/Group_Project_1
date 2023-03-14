@@ -14,28 +14,26 @@ left_foot_steps = 0;
 %position.
 
 %quantifies right steps.
-for index = 101:100:length(RANK_time_windows)-100
+for index = 1:length(RANK_time_windows)-1
 
     current_frame = RANK_time_windows(index);
-    next_frame = RANK_time_windows(index+100);
-    previous_frame = RANK_time_windows(index-100);
+    next_frame = RANK_time_windows(index+1);
 
-    if RANK_time_windows(index+100) == RANK_time_windows(index) + 100 && RANK_time_windows(index-100) == RANK_time_windows(index) - 100 %only considering frames that are consecutive
-        if RANK(current_frame,3) > RANK(next_frame,3) && RANK(current_frame,3) > RANK(previous_frame,3) %if the current frame z coordinate is greater than the next frame, it's likely a maxima.
+    if RANK_time_windows(index+1) == RANK_time_windows(index) + 1 %only considering frames that are consecutive
+        if RANK(current_frame) > RANK(next_frame) %if the current frame is greater than the next frame, it's likely a maxima.
             right_foot_steps = right_foot_steps + 1;
         end
     end
 end
 
 %quantifies left steps.
-for index = 101:100:length(LANK_time_windows)-100
+for index = 1:length(LANK_time_windows)-1
 
     current_frame = LANK_time_windows(index);
-    next_frame = LANK_time_windows(index+100);
-    previous_frame = LANK_time_windows(index-100);
+    next_frame = LANK_time_windows(index+1);
 
-    if LANK_time_windows(index+100) == LANK_time_windows(index) + 100 && LANK_time_windows(index-100) == LANK_time_windows(index) - 100
-        if LANK(current_frame) > LANK(next_frame) && LANK(current_frame,3) > LANK(previous_frame,3)
+    if LANK_time_windows(index+1) == LANK_time_windows(index) + 1
+        if LANK(current_frame) > LANK(next_frame)
             left_foot_steps = left_foot_steps + 1;
         end
     else
