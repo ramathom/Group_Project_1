@@ -13,6 +13,7 @@ else % if there is at least 1 gap in the trial
             difference = (loc_gaps(x-1) - starting_point+1)*0.01;
             gap_durations = [gap_durations,difference];
             gap_starts = [gap_starts,loc_gaps(x)]; %this is just the frame # at which gap occurs
+            time_gap_starts = [time_gap_starts,loc_gaps(x)*0.01]; %this is the frame # translated to time point 
             starting_point = loc_gaps(x);
         end
     end
