@@ -1,5 +1,7 @@
-function num_of_steps = quantify_steps(RANK,LANK)
+function num_of_steps = quantify_steps(vicon_and_delsys_data)
 
+RANK = auto_extract_marker_of_interest(vicon_and_delsys_data,"RANK");
+LANK = auto_extract_marker_of_interest(vicon_and_delsys_data,"LANK");
 RANK_time_windows = extract_time_windows(RANK);
 LANK_time_windows = extract_time_windows(LANK);
 
