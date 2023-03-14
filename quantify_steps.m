@@ -18,7 +18,7 @@ for index = 1:length(RANK_time_windows)-1
     next_frame = RANK_time_windows(index+1);
 
     if RANK_time_windows(index+1) == RANK_time_windows(index) + 1 %only considering frames that are consecutive
-        if RANK(current_frame) > RANK(next_frame) %if the current frame is greater than the next frame, it's likely a maxima.
+        if RANK(current_frame,3) > RANK(next_frame,3) %if the current frame z coordinate is greater than the next frame, it's likely a maxima.
             right_foot_steps = right_foot_steps + 1;
         end
     end
