@@ -7,7 +7,7 @@ else % if there is at least 1 gap in the trial
     gap_starts = [loc_gaps(1)];
     time_gap_starts = [loc_gaps(1)*0.01];
     gap_durations = [];
-    starting_point = loc_gaps(1);oes 
+    starting_point = loc_gaps(1); 
     for x = 2:num_gaps
         if (loc_gaps(x) ~= loc_gaps(x-1)+1)
             difference = (loc_gaps(x-1) - starting_point+1)*0.01;
