@@ -19,11 +19,10 @@ while invalid_prompt
     if ismember(txt,list_of_markers)
         invalid_prompt = false;
         marker = find(list_of_markers == txt);
-        break
+    else
+        prompt = "Invalid input. Which marker do you want to analyze? ";
+        txt = input(prompt,'s');
     end
-
-    prompt = "Invalid input. Which marker do you want to analyze? ";
-    txt = input(prompt);
 
 end
 

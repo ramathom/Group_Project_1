@@ -1,0 +1,14 @@
+function [all_output] = master_function(vicon_and_delsys_data)
+
+vicon_data = excel_upload(vicon_and_delsys_data);
+
+vicon_dimensions = size(vicon_data);
+dimensions_string = strcat("The vicon data is"," ", num2str(vicon_dimensions(1)),"X",num2str(vicon_dimensions(2))," ","large.");
+disp(dimensions_string);
+
+
+prompt = "Do you want to analyze a specific marker? Type 1 for yes or 2 for no: ";
+txt_yes_or_no = input(prompt,'s');
+
+
+end
