@@ -8,11 +8,11 @@ function [two_dim_plot,pks] = elevation_graph(vicon_and_delsys_data)
     two_dim_plot = plot(x,y);
     xlabel('Time Points');
     ylabel('Elevation (mm)');
-    title('Elevation by Time');
+    title('Elevation by Frames');
     
     %pks = findpeaks(y);
     %for x = 2:length(pks)
     %    if (pks(x)-pks(x-1) <= 20 || pks(x-1)-pks(x) <= 20)
-            pks(x) = 
+           % pks(x) = 
     %num_steps = length(pks);
 end
