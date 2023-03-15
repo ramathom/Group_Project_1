@@ -28,7 +28,26 @@ while invalid_prompt
 end
 
 if boolean_yes
-    [marker_matrix,marker_name] = extract_marker_of_interest(vicon_data);
-    gaps_present = gaps_in_data(marker_matrix);
+    prompt = "Which marker do you want to analyze? ";
+    txt = input(prompt,'s');
+    invalid_prompt = true;
+    list_of_markers = ["LFHD","RFHD","LBDH","RBHD","C7","T10","CLAV","STRN","RBAK","LSHO","LUPA","LELB","LFRM","LWRA","LWRB","LFIN","RSHO","RUPA","RELB","RFRM","RWRA","RWRB","RFIN","LASI","RASI","LPSI","RPSI","LTHI","LKNE","LTIB","LANK","LHEE","LTOE","RTHI","RKNE","RTIB","RANK","RHEE","RTOE"];
+    if ismember(txt,list_of_markers)
+        invalid_prompt = false;
+        marker = find(list_of_markers == txt);
+    else
+        prompt = "Invalid input. Which marker do you want to analyze? ";
+        txt = input(prompt,'s');
+    end
     
+    gaps_present = gaps_in_data(vicon_and_delsys_data,txt)
+    subplot(1,3,1);
+        marker_graph(vicon_and_delsys_data,txt);
+    subplot(1,3,2);
+        fourd_graph(vicon_and_delsys_data,txt);
+    subplot(1,3,3);
+        elevation_graph(vicon_and_delsys_data,txt);
+
+
+end
 end

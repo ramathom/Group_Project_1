@@ -1,6 +1,6 @@
-function four_dimensional_plot = fourd_graph(vicon_and_delsys_data) 
+function four_dimensional_plot = fourd_graph(vicon_and_delsys_data,txt) 
 %the input should be the specific marker outputted from the marker of interest function
-  [marker_of_interest, name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data); 
+  [marker_of_interest, name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data,txt); 
 
   %if columns are incomplete, call the time windows in marker of interest
   

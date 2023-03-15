@@ -1,6 +1,6 @@
-function Three_dimensional_plot = marker_graph(vicon_and_delsys_data,txt) 
+function Three_dimensional_plot = marker_graph(vicon_and_delsys_data) 
 %the input should be the specific marker outputted from the marker of interest function
-  [marker_of_interest, name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data,txt); 
+  [marker_of_interest, name_of_marker] = extract_marker_of_interest(vicon_and_delsys_data,t); 
   time_windows = extract_time_windows(marker_of_interest);
   %if columns are incomplete, call the time windows in marker of interest
  
