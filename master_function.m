@@ -26,3 +26,9 @@ while invalid_prompt
     end
         
 end
+
+if boolean_yes
+    [marker_matrix,marker_name] = extract_marker_of_interest(vicon_data);
+    gaps_present = gaps_in_data(marker_matrix);
+    
+end
