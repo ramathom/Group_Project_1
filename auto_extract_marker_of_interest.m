@@ -19,7 +19,4 @@ ref_point_on_matrix = 3*(marker-1) + 1;
 %interest from the complete data.
 matrix_marker_of_interest = complete_vicon_data(1:end,ref_point_on_matrix:(ref_point_on_matrix+2));
 
-%outputs name of marker, too.
-name_of_marker = list_of_markers(marker);
-
 end
