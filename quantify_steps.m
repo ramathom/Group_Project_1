@@ -20,7 +20,7 @@ for index = 101:100:length(RANK_time_windows)-100
     next_frame = RANK_time_windows(index+100);
     previous_frame = RANK_time_windows(index-100);
 
-    if RANK_time_windows(index+100) == RANK_time_windows(index) + 100 && RANK_time_windows(index-100) == RANK_time_windows(index) - 100 %only considering frames that are consecutive
+    if RANK_time_windows(index+100) == RANK_time_windows(index) + 100 && RANK_time_windows(index-100) == RANK_time_windows(index) - 100 %only considering every 100 frames (every 1 second)
         if RANK(current_frame,3) > RANK(next_frame,3) && RANK(current_frame,3) > RANK(previous_frame,3) %if the current frame z coordinate is greater than the next frame, it's likely a maxima.
             right_foot_steps = right_foot_steps + 1;
         end
@@ -44,7 +44,11 @@ for index = 101:100:length(LANK_time_windows)-100
 end
 
 %num_of_steps may overestimate actual # of steps because z coordinates
-%sometimes "waver." Cross-ref with video to confirm accurate # of steps.
+%sometimes "waver" on the data-sheet. Cross-ref with video to confirm accurate # of steps.
 num_of_steps = right_foot_steps + left_foot_steps;
+
+steps_string = strcat("The total number of steps in this trial is ",num2str(num_of_steps));
+
+disp(steps_string)
 
 end

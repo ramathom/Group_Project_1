@@ -5,12 +5,9 @@ complete_vicon_data = excel_upload(vicon_and_delsys_data);
 %complete list of all markers.
 list_of_markers = ["LFHD","RFHD","LBDH","RBHD","C7","T10","CLAV","STRN","RBAK","LSHO","LUPA","LELB","LFRM","LWRA","LWRB","LFIN","RSHO","RUPA","RELB","RFRM","RWRA","RWRB","RFIN","LASI","RASI","LPSI","RPSI","LTHI","LKNE","LTIB","LANK","LHEE","LTOE","RTHI","RKNE","RTIB","RANK","RHEE","RTOE"];
 
-%scrolls through list of markers and checks if user input matches any of
-%the items. User input must exactly match one of the items
-%(case-sensitive), or else the prompt is repeated. Once the marker is
-%identified, the index is stored in the variable 'marker.'
+%automatically scrolls through list of markers and checks if user input matches any of
+%the items. Once the marker is identified, the index is stored in the variable 'marker.'
 marker = find(list_of_markers == name_of_marker);
-
 
 %identifies reference point (column) on the matrix of complete data, based on 'marker.'
 ref_point_on_matrix = 3*(marker-1) + 1;
