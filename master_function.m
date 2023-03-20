@@ -2,6 +2,7 @@ function [all_output] = master_function(vicon_and_delsys_data)
 
 vicon_data = excel_upload(vicon_and_delsys_data);
 
+%displays the dimensions of the vicon data (how large is it?)
 vicon_dimensions = size(vicon_data);
 dimensions_string = strcat("The vicon data is"," ", num2str(vicon_dimensions(1)),"X",num2str(vicon_dimensions(2))," ","large.");
 disp(dimensions_string);
@@ -29,11 +30,12 @@ while invalid_prompt
         
 end
 
-cycle_again = true;
+
 
 %if the user wants to analyze a specific marker, executes the following
-%code. Cycle_again is true at first, but the entire loop will continue
+%code. cycle_again is true at first, but the entire loop will continue
 %executing if the user wants to analyze another marker.
+cycle_again = true;
 
 while cycle_again
     if boolean_yes
