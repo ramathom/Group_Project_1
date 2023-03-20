@@ -22,6 +22,7 @@ for index = 101:100:length(RANK_time_windows)-100
 
     if RANK_time_windows(index+100) == RANK_time_windows(index) + 100 && RANK_time_windows(index-100) == RANK_time_windows(index) - 100 %only considering every 100 frames (every 1 second)
         if RANK(current_frame,3) > RANK(next_frame,3) && RANK(current_frame,3) > RANK(previous_frame,3) %if the current frame z coordinate is greater than the next frame, it's likely a maxima.
+            RANK(current_frame,3)
             right_foot_steps = right_foot_steps + 1;
         end
     end
@@ -36,6 +37,7 @@ for index = 101:100:length(LANK_time_windows)-100
 
     if LANK_time_windows(index+100) == LANK_time_windows(index) + 100 && LANK_time_windows(index-100) == LANK_time_windows(index) - 100
         if LANK(current_frame) > LANK(next_frame) && LANK(current_frame,3) > LANK(previous_frame,3)
+            LANK(current_frame,3)
             left_foot_steps = left_foot_steps + 1;
         end
     else
