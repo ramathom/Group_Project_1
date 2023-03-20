@@ -1,6 +1,6 @@
-function time_windows = extract_time_windows2(vicon_and_delsys_data)
+function time_windows = extract_time_windows2(vicon_and_delsys_data,txt)
 
-marker_of_interest=extract_marker_of_interest(vicon_and_delsys_data);
+marker_of_interest=extract_marker_of_interest(vicon_and_delsys_data,txt);
 num_of_frames = size(marker_of_interest);
 time_windows = [];
 

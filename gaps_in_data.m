@@ -1,5 +1,5 @@
-function [verbal_display] = gaps_in_data(vicon_and_delsys_data)
-loc_gaps = extract_time_windows2(vicon_and_delsys_data);
+function [verbal_display] = gaps_in_data(vicon_and_delsys_data,txt)
+loc_gaps = extract_time_windows2(vicon_and_delsys_data,txt);
 if (length(loc_gaps)==0) %if there were no gaps in data in the entire trial
     verbal_display = 'Marker was within camera frame for the entirety of the trial.';
 else % if there is at least 1 gap in the trial 
