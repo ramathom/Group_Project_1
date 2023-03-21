@@ -20,7 +20,7 @@ txt_yes_or_no = input(prompt,'s');
 %the same prompt until a valid answer is given.
 while invalid_prompt
 
-    if txt_yes_or_no == 'y' || 'n'
+    if ismember(txt_yes_or_no,["y","n"])
         if txt_yes_or_no == 'y'
             boolean_yes = true;
             invalid_prompt = false;
@@ -87,13 +87,11 @@ while cycle_again
 
     while invalid_prompt
     
-        if txt_yes_or_no == 'y' || 'n'
+        if ismember(txt_yes_or_no,["y","n"])
             if txt_yes_or_no == 'y'
-                boolean_yes = true;
                 invalid_prompt = false;
                 cycle_again = true;
             else
-                boolean_yes = false;
                 invalid_prompt = false;
                 cycle_again = false;
             end
@@ -113,7 +111,7 @@ txt_yes_or_no = input(prompt,'s');
 %continues cycling through the prompt if the user input is invalid.
 while invalid_prompt
 
-    if txt_yes_or_no == 'y' || 'n'
+    if ismember(txt_yes_or_no,["y","n"])
         if txt_yes_or_no == 'y'
             boolean_yes = true;
             invalid_prompt = false;
