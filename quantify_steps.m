@@ -11,7 +11,8 @@ left_foot_steps = 0;
 %quantifies number of steps based on maxima.
 %Maxima = points at which foot is at highest elevation (z point).
 %The right and left ankles (RANK and LANK) are used to approximate foot
-%position.
+%position. Because steps can last multiple frames, only coordinates that
+%are 100 frames apart.
 
 %quantifies right steps.
 for index = 101:100:length(RANK_time_windows)-100
