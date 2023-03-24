@@ -1,6 +1,6 @@
 # Group_Project_1
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vQOtV8VLusCPOMN7dLhsYnmY91HE9IwB-VPb-xcpM5pbHWaTZWEtk_vYTQDS-zl-LiI-8coXY9DMFS3/pub?embedded=true" width="100%" height="600"></iframe>
-
+<img src="Demo-CLPS0950.gif" alt="Demo-CLPS0950" width="600" height="400">
 (see google doc above for full project description, table of functions, and visual representations of experimental set up) 
 
 Parkinson's Disease (PD) is a neurodegenerative disease that affects movement, often causing symptoms such as tremors, stiffness, and difficulty with balance and walking. Among the most distressing symptoms of Parkinson's disease is freezing of gait (FOG), which occurs when a person suddenly loses the ability to initiate or continue walking.
