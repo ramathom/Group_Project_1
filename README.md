@@ -2,7 +2,7 @@
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vQOtV8VLusCPOMN7dLhsYnmY91HE9IwB-VPb-xcpM5pbHWaTZWEtk_vYTQDS-zl-LiI-8coXY9DMFS3/pub?embedded=true" width="100%" height="600"></iframe>
 <img src="Demo-CLPS0950.gif" alt="Demo-CLPS0950" width="600" height="400">
 (see google doc above for full project description, table of functions, and visual representations of experimental set up) 
-
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vS1iflERfTP44RrzVZ8WjokwEXFd72y0loAbTcBy6VNo7RBnavxHDFRSrv9ROnS5vx7MOOaEsnmf2dN/pub?embedded=true"></iframe>
 Parkinson's Disease (PD) is a neurodegenerative disease that affects movement, often causing symptoms such as tremors, stiffness, and difficulty with balance and walking. Among the most distressing symptoms of Parkinson's disease is freezing of gait (FOG), which occurs when a person suddenly loses the ability to initiate or continue walking.
 FootStep, Natalie’s student venture from Brown’s Nelson Center for Entrepreneurship, seeks to mitigate FOG episodes by creating a wearable device that deploys sensory cues. By providing external cues, people with Parkinson's Disease can focus their attention on the cue, which can help to override the dysfunctional neural circuits that lead to FOG.
 FootStep is conducting clinical research to determine the effectiveness of sensory cues, such as lasers and auditory cues, in mitigating freezing of gait episodes. Data is collected via the Vicon camera system, which interfaces with 39 markers placed in distinct locations on the participant’s body (see image). The high-speed camera system captures 100 frames per second, making the excel sheet generated from each trial lengthy and not user friendly. 
